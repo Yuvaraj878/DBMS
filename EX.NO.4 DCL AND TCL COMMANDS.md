@@ -33,7 +33,7 @@ addr varchar(40)
 
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/56bbda44-a582-42e3-9738-5b1d035dd675)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/04c6a1e3-0108-47bd-81a5-84bb5eed3e3f)
 
 
 
@@ -43,35 +43,39 @@ addr varchar(40)
 
 ### QUERY:
 ```sql
-insert into employee values(1,'Luffy','EastBlue');
-insert into employee values(2,'Shanks','GodValley');
-insert into employee values(3,'Grap','MarinFord');
+INSERT INTO employee (employee_id, name, address)
+VALUES (1, 'John Doe', '123 Main Street'),
+       (2, 'Jane Doe', '456 Elm Street'),
+       (3, 'Peter Parker', '789 Queens Boulevard');
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/db081e71-759d-44df-b847-75294a2e2a34)
-
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/10475fc7-507b-4621-8330-61a2a1b3f92e)
 
 ### Q3) Start the transaction and create a save point A.
 
 ### QUERY:
 ```sql
-savepoint A;
+START TRANSACTION;
+SAVEPOINT s1;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/d491985f-d652-4510-baba-69bda39920c4)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/c82a7afd-ad22-41d4-93c0-09d3f0eb8ac2)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/8fcc7ae6-b16e-49f2-a219-8dd49c3ee93a)
 
 
 ### Q4) Perform insertion into employee table.
 
 ### QUERY:
 ```sql
-insert into employee(4,'Robin','EniesLobby');
+INSERT INTO employee (employee_id, name, address)
+VALUES (4, 'Mary Jane Watson', '1011 Mockingbird Lane');
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/b9d81949-f840-4fb4-8427-6c5efb79da74)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/9a83829c-4b35-425d-942b-8a25e1b70d9e)
+
 
 
 
@@ -80,12 +84,13 @@ insert into employee(4,'Robin','EniesLobby');
 
 ### QUERY:
 ```sql
-select * from employee;
-savepoint s2;
+SELECT * FROM employee;
+SAVEPOINT s2;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/bc86bb69-d7ad-4193-aeda-050214882984)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/f2c1c800-e66a-4af1-a8b3-99b7c63dbb4c)
+
 
 
 
@@ -94,11 +99,12 @@ savepoint s2;
 
 ### QUERY:
 ```sql
-update employee set emp_name='Nico Robin' where emp_id=4;
+UPDATE employee SET name = 'Spider-Man' WHERE employee_id = 3;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/2e9e6855-56ea-40f4-ba36-56f8eafd68ee)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/04623c17-7bdb-442e-91ef-988eea34a57c)
+
 
 
 
@@ -107,12 +113,13 @@ update employee set emp_name='Nico Robin' where emp_id=4;
 
 ### QUERY:
 ```sql
-select * from employee;
-rollback to s2;
+SELECT * FROM employee;
+ROLLBACK TO SAVEPOINT s2;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/b66b2852-7cbc-49e6-a059-579485f3ff49)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/84694909-163c-4c14-9f5d-596ceeade9a0)
+
 
 
 ### Q9) Display the employee table and commit the changes; 
@@ -120,12 +127,13 @@ rollback to s2;
 
 ### QUERY:
 ```sql
-select * from employee;
-commit;
+SELECT * FROM employee;
+COMMIT;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/7dd55645-f515-4c5b-9174-1b3a9bc24e30)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/fdd4bb14-f103-41a8-bd16-782b0b39d97e)
+
 
 
 
@@ -134,11 +142,11 @@ commit;
 
 ### QUERY:
 ```sql
-rollback to A;
+ROLLBACK TO SAVEPOINT s1;
 ```
 
 ### OUTPUT:
-![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/441afff5-9f95-418b-ad8b-c2b5cfbf810d)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/a599ec17-2359-4aae-8011-17a7f8e1a839)
 
 
 
@@ -152,22 +160,31 @@ GRANT INSERT, UPDATE ON database_name TO new_user;
 ```
 
 ### OUTPUT:
-
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/3c3761a5-28c0-4c83-a203-89e0087e6676)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/fd08ac3a-d1a5-4a16-af6a-f3bc5ff24629)
 
 ### Q12) Check the user access and display the result 
 
 
 ### QUERY:
-
+```sql
+SHOW GRANTS FOR new_user;
+```
 
 ### OUTPUT:
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/2fbd5d94-7610-4828-a072-c84372c06442)
 
 ### Q13) Revoke the privillages.
 
 ### QUERY:
-
+```sql
+SHOW GRANTS FOR new_user;
+REVOKE INSERT, UPDATE ON database_name FROM new_user;
+SHOW GRANTS FOR new_user;
+```
 
 ### OUTPUT:
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/bd4b2b58-817e-42ea-b84d-a59af0382c11)
 
 
 ## RESULT :
