@@ -146,7 +146,10 @@ rollback to A;
 
 
 ### QUERY:
-
+```sql
+CREATE USER new_user;
+GRANT INSERT, UPDATE ON database_name TO new_user;
+```
 
 ### OUTPUT:
 
