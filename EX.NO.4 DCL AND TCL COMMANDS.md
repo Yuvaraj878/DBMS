@@ -33,7 +33,8 @@ addr varchar(40)
 
 
 ### OUTPUT:
-![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/04c6a1e3-0108-47bd-81a5-84bb5eed3e3f)
+![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/4885d2a8-451a-43b0-8c65-3fd8808d47d6)
+
 
 
 
