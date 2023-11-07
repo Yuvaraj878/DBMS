@@ -62,6 +62,7 @@ SAVEPOINT s1;
 
 ### OUTPUT:
 ![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/c82a7afd-ad22-41d4-93c0-09d3f0eb8ac2)
+
 ![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/8fcc7ae6-b16e-49f2-a219-8dd49c3ee93a)
 
 
@@ -161,6 +162,7 @@ GRANT INSERT, UPDATE ON database_name TO new_user;
 
 ### OUTPUT:
 ![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/3c3761a5-28c0-4c83-a203-89e0087e6676)
+
 ![image](https://github.com/Yuvaraj878/DBMS/assets/118622554/fd08ac3a-d1a5-4a16-af6a-f3bc5ff24629)
 
 ### Q12) Check the user access and display the result 
