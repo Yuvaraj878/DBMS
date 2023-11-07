@@ -203,7 +203,6 @@ select avg(salary) from manager;
 ```
 ### OUTPUT:
 ![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/7d8b3058-82fa-444d-9aa6-288927ea5ce2)
-95f73030c)
 
 ### Q14) List the jobs and number of employees in each job. The result should be in the descending order of the number of employees.
 
