@@ -22,13 +22,13 @@ REG NO: 212222240119
 ### Q1) Create a table employee with employee id ,name and Address
 
 ### QUERY:
-``sql
+```sql
 create table employee(
 emp_id numeric,
 emp_name varchar(10),
 addr varchar(40)
 );
-``
+```
 
 
 
