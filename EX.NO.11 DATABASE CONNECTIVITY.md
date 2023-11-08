@@ -1,13 +1,13 @@
 # EX 11: Oracle Database Connection with Python
 ## Date: 
 ## AIM:
-To connect Oracle database with Python using cx_Oracle module.
+To connect Oracle database with Python using mysql.
 ## PROCEDURE:
-1. Install cx-Oracle : With the command **pip install cx-Oracle**
+1. Install mysql : With the command **pip install mysql**
 2. To Connect **connect():**
    Now Establish a connection between the Python program and Oracle database by using connect() function. 
 ```python
-con = cx_Oracle.connect('username/password@localhost')
+con = mysql.connect('username/password@localhost')
 cursor(): To execute a SQL query and to provide results some special object is required that is nothing but cursor() object.
 cursor = con.cursor()
 ```
